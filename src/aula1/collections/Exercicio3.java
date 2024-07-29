@@ -2,8 +2,10 @@ package aula1.collections;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 public class Exercicio3 {
 
@@ -15,16 +17,32 @@ public class Exercicio3 {
 	public Exercicio3() {
 
 		List<Integer> lista = new ArrayList<>();
-
-		Random generator = new Random();
-
-		for (int i = 0; i < 50; i++) {
-			lista.add(generator.nextInt(20));
-		}
+		Set<Integer> listaSemRepeticoes = new HashSet<>();
 		
-		Collections.sort(lista);
+		Random generator = new Random(); 
 		
-		System.out.println(lista);
+		lista.add(0, generator.nextInt(20));
+		lista.add(1, generator.nextInt(20));
+		lista.add(2, generator.nextInt(20));
+		lista.add(3, generator.nextInt(20));
+		lista.add(4, generator.nextInt(20));
+		lista.add(5, generator.nextInt(20));
+		lista.add(6, generator.nextInt(20));
+		lista.add(7, generator.nextInt(20));
+		lista.add(8, generator.nextInt(20));
+		lista.add(9, generator.nextInt(20));
+		
+		lista.addAll(lista);
+		lista.addAll(lista);
+		lista.addAll(lista);
+		lista.addAll(lista);
+		lista.addAll(lista);
+		
+		listaSemRepeticoes.addAll(lista);
+		
+		
+		
+		System.out.println(listaSemRepeticoes);
 	}
 
 }
