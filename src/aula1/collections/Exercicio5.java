@@ -23,15 +23,26 @@ public class Exercicio5 {
 
 		Random generator = new Random();
 
-		for (int i = 0; i < 10; i++) {
+		do {
 			conjunto1.add(generator.nextInt(30));
-		}
-
-		for (int i = 0; i < 10; i++) {
+		} while (conjunto1.size() < 10);
+		
+		do {
 			conjunto2.add(generator.nextInt(30));
-		}
+		} while (conjunto2.size() < 10);
 		
 		System.out.println(conjunto1);
 		System.out.println(conjunto2);
+		
+		Set<Integer> conjuntoFinal = new HashSet<Integer>();
+		
+		for(Integer contagem : conjunto2) {
+			if (conjunto1.contains(contagem)) {
+				conjuntoFinal.add(contagem);
+			}
+		}
+		
+		System.out.println("Contagem Final: " + conjuntoFinal);
+		
 	}
 }
