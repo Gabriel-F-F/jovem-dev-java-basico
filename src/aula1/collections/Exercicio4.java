@@ -1,7 +1,5 @@
 package aula1.collections;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JOptionPane;
@@ -20,14 +18,21 @@ public class Exercicio4 {
 //		que cada caractere aparece na frase. Utilize a coleção
 //		HashMap para esta tarefa.
 		
-		Map<Integer, Character> mapa = new HashMap<>();
+		Map<Character, Integer> mapa = new HashMap<>();
 
 		String palavra = JOptionPane.showInputDialog("Digite uma Frase:");
 		
-		for(int i = 0; i < palavra.length(); i++) {
-			mapa.put(i, palavra.charAt(i));
+		for(char caractere : palavra.toCharArray()) {
+			if(mapa.containsKey(caractere)) {
+				mapa.put(caractere, mapa.get(caractere) + 1);
+			}
+			else {
+				mapa.put(caractere, 1);	
+			}
 		}
 		
-		System.out.println(Collections.frequency(mapa.values(), "a"));
+		for(Map.Entry<Character, Integer> entrada : mapa.entrySet()) {
+			System.out.println(entrada.getKey() + ": " + entrada.getValue());
+		}
 	}
 }
