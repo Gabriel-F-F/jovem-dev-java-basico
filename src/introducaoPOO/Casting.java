@@ -1,4 +1,4 @@
-package classeEObjeto;
+package introducaoPOO;
 
 public class Casting {
 

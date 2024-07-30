@@ -1,4 +1,4 @@
-package classeEObjeto;
+package introducaoPOO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +24,7 @@ public class Boxing {
 		
 		String s5 = null;
 		String s6 = new String("abc");
-		System.out.println(s5.equals(s6));  //cuidado a vericar valores nulos
+		System.out.println(s5.equals(s6));  //  cuidado a vericar valores nulos
 		
 	}
 }

@@ -17,17 +17,18 @@ public class Exercicio6 {
 		
 		Map<String, List<Double>> mapaAluno = new HashMap<>();
 		String nome;
-		List<Double> nota = null;
+		double nota = 0;
+		List<Double> notaLista = null;
 		
 		for(int i = 0; i < 2; i++) {
 			
 			nome = JOptionPane.showInputDialog("Nome do Aluno: ");
 			
 			for(int j = 0; j < 3; j++) {
-				nota.add(Double.parseDouble(JOptionPane.showInputDialog("Nota " + (j + 1))));
-			
+			nota = Double.parseDouble(JOptionPane.showInputDialog("Digite a Nota" + (j + 1)));
+			notaLista.add(nota);
+			mapaAluno.put(nome, notaLista);
 			}
-			mapaAluno.put(nome, nota);
 		}
 		
 		System.out.println(mapaAluno);
