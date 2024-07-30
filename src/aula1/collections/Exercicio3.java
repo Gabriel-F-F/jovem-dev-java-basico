@@ -40,8 +40,6 @@ public class Exercicio3 {
 		
 		listaSemRepeticoes.addAll(lista);
 		
-		
-		
 		System.out.println(listaSemRepeticoes);
 	}
 
