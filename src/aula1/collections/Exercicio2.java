@@ -7,6 +7,10 @@ import java.util.Random;
 
 public class Exercicio2 {
 
+//	Faça um programa que crie uma lista com 50 números
+//	inteiros aleatórios e depois exiba-os ordenados do
+//	maior para o menor
+	
 	public static void main(String[] args) {
 		new Exercicio2();
 	}

@@ -9,6 +9,13 @@ import java.util.Set;
 
 public class Exercicio3 {
 
+//	Faça um programa que crie uma lista com 50 números
+//	inteiros com valor máximo 20. Mostre a lista e, em
+//	seguida, mostre apenas os números contidos na lista,
+//	sem repetição. Não utilize nenhuma estrutura de
+//	repetição para fazer essa tarefa.
+
+	
 	public static void main(String[] args) {
 
 		new Exercicio3();
@@ -21,27 +28,14 @@ public class Exercicio3 {
 		
 		Random generator = new Random(); 
 		
-		lista.add(0, generator.nextInt(20));
-		lista.add(1, generator.nextInt(20));
-		lista.add(2, generator.nextInt(20));
-		lista.add(3, generator.nextInt(20));
-		lista.add(4, generator.nextInt(20));
-		lista.add(5, generator.nextInt(20));
-		lista.add(6, generator.nextInt(20));
-		lista.add(7, generator.nextInt(20));
-		lista.add(8, generator.nextInt(20));
-		lista.add(9, generator.nextInt(20));
+		for(int i = 0; i < 50; i++) {
+			lista.add(generator.nextInt(20));
+		}
 		
-		lista.addAll(lista);
-		lista.addAll(lista);
-		lista.addAll(lista);
-		lista.addAll(lista);
-		lista.addAll(lista);
+		Collections.sort(lista);
 		
 		listaSemRepeticoes.addAll(lista);
-		
-		
-		
+
 		System.out.println(listaSemRepeticoes);
 	}
 
