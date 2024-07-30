@@ -13,17 +13,26 @@ public class Exercicio4 {
 
 	public Exercicio4() {
 
-		Map<Integer, Character> mapa = new HashMap<>();
+//		Faça um programa que peça para o usuário digitar
+//		uma frase. Em seguida, mostre a quantidade de vezes
+//		que cada caractere aparece na frase. Utilize a coleção
+//		HashMap para esta tarefa.
+		
+		Map<Character, Integer> mapa = new HashMap<>();
 
 		String palavra = JOptionPane.showInputDialog("Digite uma Frase:");
 		
-		for(int i = 0; i < palavra.length(); i++){
-			mapa.put(i, palavra.charAt(i));
+		for(char caractere : palavra.toCharArray()) {
+			if(mapa.containsKey(caractere)) {
+				mapa.put(caractere, mapa.get(caractere) + 1);
+			}
+			else {
+				mapa.put(caractere, 1);	
+			}
 		}
 		
-		
-		
-		System.out.println(mapa);
-		
+		for(Map.Entry<Character, Integer> entrada : mapa.entrySet()) {
+			System.out.println(entrada.getKey() + ": " + entrada.getValue());
+		}
 	}
 }
