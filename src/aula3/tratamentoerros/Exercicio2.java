@@ -1,7 +1,6 @@
 package aula3.tratamentoerros;
 
 import javax.swing.JOptionPane;
-
 import aula3.tratamentoerros.exceptions.ZeroException;
 
 public class Exercicio2 {
