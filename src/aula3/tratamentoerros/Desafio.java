@@ -33,14 +33,18 @@ public class Desafio extends Venda {
 				throw new VendaException("A quantidade de Itens deve ser entre 1 e 10!");
 			}
 
-			for (int i = 0; i < quantidadeItens; i++) {
-				v.nome = JOptionPane.showInputDialog("Nome do Produto:");
-				v.preco = Double.parseDouble(JOptionPane.showInputDialog("Nome do Produto:"));
-				v.itens.add(v);
+			for (int j = 0; j < quantidadeItens; j++) {
+				Item i = new Item();
+				i.nome = JOptionPane.showInputDialog("Nome do Produto:");
+				i.preco = Double.parseDouble(JOptionPane.showInputDialog("Preço do Produto:"));
 				
-				if (v.preco <= 0) {
+				if (i.preco <= 0) {
 					throw new PrecoIncorretoException();
 				}
+				
+				v.itens.add(i);
+				System.out.println(v.itens.isEmpty());
+				System.out.println(v.itens.toString());
 			}
 
 		} catch (VendaException e) {
