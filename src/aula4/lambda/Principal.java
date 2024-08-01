@@ -4,9 +4,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.Date;
 import java.util.List;
-import java.util.function.Consumer;
 
 import javax.swing.JOptionPane;
 
@@ -23,22 +21,23 @@ public class Principal {
 	}
 
 	public Principal() {
-		
-		List<Aluno> alunos = new ArrayList<Aluno>();
-		
-		for(int i = 0; i < 2; i++) {
-		Aluno a = new Aluno();
-		a.numeroChamada = Integer.parseInt(JOptionPane.showInputDialog("Número Chamada: " + (i + 1)));
-		a.nome = JOptionPane.showInputDialog("Nome do Aluno: " + (i + 1));
-		a.dataNascimento = Date.valueOf(JOptionPane.showInputDialog("Data de Nascimento: " + (i + 1)));
-		alunos.add(a);
-		}
-		
-		System.out.println(alunos);
-		
-		alunos.sort(Comparator.comparing(Aluno::dataNascimento));
-		
 
-		System.out.println(alunos);
+		List<Aluno> alunos = new ArrayList<Aluno>();
+
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+		for (int i = 0; i < 5; i++) {
+			Aluno a = new Aluno();
+			a.numeroChamada = Integer.parseInt(JOptionPane.showInputDialog("Número Chamada: "));
+			a.nome = JOptionPane.showInputDialog("Nome do Aluno: ");
+			a.dataNascimento = LocalDate.parse(JOptionPane.showInputDialog("Data de Nascimento: (dd/MM/yyyy)"), formatter);
+
+			alunos.add(a);
+		}
+		alunos.sort(Comparator.comparing(Aluno::getDataNascimento));
+
+		alunos.forEach(n -> {
+			System.out.println(n);
+		});
 	}
 }
