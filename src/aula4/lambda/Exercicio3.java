@@ -1,6 +1,7 @@
 package aula4.lambda;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Exercicio3 {
@@ -30,9 +31,7 @@ public class Exercicio3 {
 		
 		System.out.println(lista);
 		
-		lista.forEach(s -> { 
-			lista.removeIf(null);
-		});
+		Iterator<String> iterator = lista.iterator();
 		
 		System.out.println(lista);
 	}
