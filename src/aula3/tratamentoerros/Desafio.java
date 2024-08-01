@@ -4,6 +4,7 @@ import javax.swing.JOptionPane;
 
 import aula3.tratamentoerros.exceptions.PrecoIncorretoException;
 import aula3.tratamentoerros.exceptions.VendaException;
+import tratamentoDeExcecoes.throwExemplo;
 
 public class Desafio extends Venda {
 
@@ -34,18 +35,20 @@ public class Desafio extends Venda {
 			}
 
 			for (int j = 0; j < quantidadeItens; j++) {
-				Item i = new Item();
-				i.nome = JOptionPane.showInputDialog("Nome do Produto:");
-				i.preco = Double.parseDouble(JOptionPane.showInputDialog("Preço do Produto:"));
-				
-				if (i.preco <= 0) {
+
+				v.nome = JOptionPane.showInputDialog("Nome do Produto:");
+				v.preco = Double.parseDouble(JOptionPane.showInputDialog("Preço do Produto:"));
+
+				if (v.preco <= 0) {
+					v.preco = arrumaPreco(v.preco);
+					if (v.preco <= 0) {
 					throw new PrecoIncorretoException();
+					}
 				}
 				
-				v.itens.add(i);
-				System.out.println(v.itens.isEmpty());
-				System.out.println(v.itens.toString());
+				itens.add(v);
 			}
+			System.out.println(itens);
 
 		} catch (VendaException e) {
 			JOptionPane.showMessageDialog(null, "A quantidade de Itens deve ser entre 1 e 10!");
