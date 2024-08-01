@@ -12,4 +12,9 @@ public class Aluno {
 	public String toString() {
 		return "Número Chamada: " + numeroChamada + ", Nome: " + nome + ", Data de Nascimento: " + dataNascimento + "\n";
 	}
+
+	public LocalDate dataNascimento() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
