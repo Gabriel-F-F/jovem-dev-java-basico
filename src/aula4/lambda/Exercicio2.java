@@ -8,7 +8,7 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-public class Principal {
+public class Exercicio2 {
 
 //	Crie uma classe chamada Aluno, com numeroChamada, nome e dataNascimento. 
 //	Em seguida, na classe Principal, crie uma lista com 5 alunos e, 
@@ -17,10 +17,10 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-		new Principal();
+		new Exercicio2();
 	}
 
-	public Principal() {
+	public Exercicio2() {
 
 		List<Aluno> alunos = new ArrayList<Aluno>();
 

@@ -1,7 +1,6 @@
 package aula4.lambda;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class Exercicio3 {
@@ -30,8 +29,9 @@ public class Exercicio3 {
 		lista.add(e);
 		
 		System.out.println(lista);
-		
-		Iterator<String> iterator = lista.iterator();
+
+		lista.removeIf(a1 -> a1.startsWith("T"));
+		lista.removeIf(a1 -> a1.endsWith("o"));
 		
 		System.out.println(lista);
 	}
