@@ -34,8 +34,7 @@ public class StreamTeste {
 		list.stream().map(String::toUpperCase).forEach(System.out::println);
 		list.stream().map(String::length).forEach(System.out::println);
 
-		// 1.2 - filter(Predicate<T>) - remove os elementos que não satisfazem a
-		// condição
+		// 1.2 - filter(Predicate<T>) - remove os elementos que não satisfazem a condição
 		List<String> list2 = new ArrayList<>();
 		System.err.println();
 		list2.add("adalbeto");
@@ -142,7 +141,7 @@ public class StreamTeste {
 		listT3.stream().filter(elemento -> elemento.startsWith("x")).map(String::toUpperCase).findAny().orElse("Não Encontrado!")
 		);
 		
-		// 2.5 - IntStream, DoubleStream, LongStream -> max(), min(0), average()
+		// 2.5 - IntStream, DoubleStream, LongStream -> max(), min(), average()
 		List<String> listT4 = new ArrayList<>();
 		System.err.println();
 		listT4.add("adalbeto");

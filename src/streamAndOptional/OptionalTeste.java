@@ -31,7 +31,7 @@ public class OptionalTeste {
 
 		//orElseGet(Supplier<T>)
 		System.out.println(opt.orElseGet(() -> "Não encontrou")); // orElseGet(Supplier<T>), espera um String
-		System.out.println(opt.orElse(getStringAlternativo()));	// o orElse Só será chamado caso o opt for null
+		System.out.println(opt.orElse(getStringAlternativo()));	  // o orElse Só será chamado caso o opt for null
 		System.out.println(opt.orElseGet(() -> getStringAlternativo())); 
 
 		

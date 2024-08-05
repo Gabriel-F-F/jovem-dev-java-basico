@@ -4,7 +4,6 @@ import javax.swing.JOptionPane;
 
 import aula3.tratamentoerros.exceptions.PrecoIncorretoException;
 import aula3.tratamentoerros.exceptions.VendaException;
-import tratamentoDeExcecoes.throwExemplo;
 
 public class Desafio extends Venda {
 

@@ -4,5 +4,4 @@ public class Item {
 
 	String nome;
 	Double preco;
-	
 }
