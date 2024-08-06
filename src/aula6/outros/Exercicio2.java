@@ -1,10 +1,12 @@
 package aula6.outros;
 
-public class Exercicio2 {
+public class Exercicio2 implements CalculoInterface {
 
 	public static void main(String[] args) {
-			
+
 		Calculadora1Enum adicao = Calculadora1Enum.ADICAO;
+		
+		adicao.getCodigo();
 		
 		Calculadora1Enum subtracao = Calculadora1Enum.SUBTRACAO;
 		
