@@ -1,10 +1,9 @@
 package aula5.stream.exceptions;
 
-public class ZeroBertoException extends Exception {
+public class ZeroBertoException extends RuntimeException {
 
-	public ZeroBertoException() {
-		super("Não há nenhum Berto");
-	}
+	private static final long serialVersionUID = -1215142183989026406L;
+	
 	public ZeroBertoException(String mensagemException) {
 		super(mensagemException);
 	}

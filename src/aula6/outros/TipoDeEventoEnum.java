@@ -2,18 +2,30 @@ package aula6.outros;
 
 public enum TipoDeEventoEnum {
 
-	SOCIAL(1),
-	LAZER(2),
-	PROFISSIONAL(3),
-	OUTROS(4);
-	
+	SOCIAL("SOCIAL", 1), LAZER("LAZER", 2), PROFISSIONAL("PROFISSIONAL", 3), OUTROS("OUTROS", 4);
+
+	private String nome;
 	private int codigo;
 	
-	private TipoDeEventoEnum(int codigo) {
+	private TipoDeEventoEnum(String nome, int codigo) {
+		this.nome = nome;
 		this.codigo = codigo;
 	}
-
-	public int getCodigo() {
-		return codigo;
+	
+	public String getNome() {
+		return nome;
+	}
+	
+	public static TipoDeEventoEnum tipoEvento(int tipoEvento) {
+		switch (tipoEvento) {
+		case 1:
+			return SOCIAL;
+		case 2:
+			return LAZER;
+		case 3:
+			return PROFISSIONAL;
+		default:
+			return OUTROS;
+		}
 	}
 }

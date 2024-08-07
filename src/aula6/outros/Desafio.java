@@ -1,7 +1,8 @@
 package aula6.outros;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Desafio {
@@ -10,14 +11,46 @@ public class Desafio {
 		
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("Descrição Evento 1: ");
-		String desc1 = sc.nextLine();
-		System.out.print("Data Evento 1: ");
-		LocalDateTime data1 = LocalDateTime.parse(sc.nextLine(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-		System.out.print("Tipo do Evento 1: \n1- SOCIAL\n2-LAZER\n3- PROFISSIONAL\n4- OUTROS");
-		int tipo1 = sc.nextInt();
-		Evento e1 = new Evento(desc1, data1, tipo1);
+		List<Evento> listaEventos = new ArrayList<>();
 		
+		System.out.println("Descrição Evento 1");
+		String desc = sc.nextLine();
+		System.out.println("Data Evento 1: Ano/Mês/Dia/Hora/Minuto");
+		LocalDateTime data = LocalDateTime.of(sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt());
+		System.out.println("Digite o Tipo do Evento 1: SOCIAL, LAZER, PROFISSIONAL ou OUTROS");
+		int tipo = sc.nextInt();
+		TipoDeEventoEnum e = TipoDeEventoEnum.tipoEvento(tipo);
+		Evento evento1 = new Evento(desc, data, e);
+		listaEventos.add(evento1);
 		
+		Scanner sc2 = new Scanner(System.in);
+		
+		System.out.println("Descrição Evento 2");
+		desc = sc2.nextLine();
+		System.out.println("Data Evento 2: Ano/Mês/Dia/Hora/Minuto");
+		data = LocalDateTime.of(sc2.nextInt(), sc2.nextInt(), sc2.nextInt(), sc2.nextInt(), sc2.nextInt());
+		System.out.println("Digite o Tipo do Evento 2: SOCIAL, LAZER, PROFISSIONAL ou OUTROS");
+		tipo = sc2.nextInt();
+		e = TipoDeEventoEnum.tipoEvento(tipo);
+		Evento evento2 = new Evento(desc, data, e);
+		listaEventos.add(evento2);
+		
+		Scanner sc3 = new Scanner(System.in);
+		
+		System.out.println("Descrição Evento 3");
+		desc = sc3.nextLine();
+		System.out.println("Data Evento 3: Ano/Mês/Dia/Hora/Minuto");
+		data = LocalDateTime.of(sc3.nextInt(), sc3.nextInt(), sc3.nextInt(), sc3.nextInt(), sc3.nextInt());
+		System.out.println("Digite o Tipo do Evento 3: SOCIAL, LAZER, PROFISSIONAL ou OUTROS");
+		tipo = sc3.nextInt();
+		e = TipoDeEventoEnum.tipoEvento(tipo);
+		Evento evento3 = new Evento(desc, data, e);
+		listaEventos.add(evento3);
+		
+		System.out.println(listaEventos);
+		
+		sc.close();
+		sc2.close();
+		sc3.close();
 	}
 }
