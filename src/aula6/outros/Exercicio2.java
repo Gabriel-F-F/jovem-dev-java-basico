@@ -1,19 +1,17 @@
 package aula6.outros;
 
-public class Exercicio2 implements CalculoInterface {
+public class Exercicio2 {
 
 	public static void main(String[] args) {
 
-		Calculadora1Enum adicao = Calculadora1Enum.ADICAO;
+		int a = 10;
+		int b = 5;
 		
-		adicao.getCodigo();
-		
-		Calculadora1Enum subtracao = Calculadora1Enum.SUBTRACAO;
-		
-		Calculadora1Enum multiplicacao = Calculadora1Enum.MULTIPLICACAO;
-		
-		Calculadora1Enum divisao = Calculadora1Enum.DIVISAO;
-		
+		for(Calculadora1Enum c : Calculadora1Enum.values()) {
+			int resultado = c.executarOperacao(a, b);
+			System.out.println(c.getNome() + ": " + a + " e " + b + " = " + resultado);
+			
+		}
 		
 	}
 }
