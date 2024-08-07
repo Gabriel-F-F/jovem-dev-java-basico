@@ -3,7 +3,11 @@ package aula6.outros;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.stream.Collectors;
+
+import javax.swing.JOptionPane;
 
 public class Desafio {
 
@@ -47,7 +51,20 @@ public class Desafio {
 		Evento evento3 = new Evento(desc, data, e);
 		listaEventos.add(evento3);
 		
-		System.out.println(listaEventos);
+		System.out.println("Digite um evento");
+		String evento = sc3.nextLine();
+		TipoDeEventoEnum tipoBusca = TipoDeEventoEnum.valueOf(evento);
+		
+		Map<Boolean, List<Evento>> mapa = listaEventos
+				.stream()
+				.filter(t -> t.getTipoDeEvento().equals(tipoBusca))
+				.collect(Collectors.groupingBy(t -> t.getDataHora().isBefore(LocalDateTime.now())));
+		
+		System.out.println("Eventos já ocorridos:");
+		System.out.println(mapa.get(true));
+		
+		System.out.println("Eventos que ainda não ocorreram:");
+		System.out.println(mapa.get(false));
 		
 		sc.close();
 		sc2.close();
