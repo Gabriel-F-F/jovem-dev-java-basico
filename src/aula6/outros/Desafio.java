@@ -7,8 +7,6 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-import javax.swing.JOptionPane;
-
 public class Desafio {
 
 	public static void main(String[] args) {
