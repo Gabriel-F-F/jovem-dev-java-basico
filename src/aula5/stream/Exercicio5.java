@@ -27,7 +27,11 @@ public class Exercicio5 {
 	}
 
 	public String buscaPrimeiroNomeTerminadoEmBerto(List<String> list) {
-		return list.stream().filter(Objects::nonNull).filter(name -> name.endsWith("berto")).findFirst().orElseThrow(() -> new ZeroBertoException("Não há nenhum Berto!"));
+		return list.stream()
+				.filter(Objects::nonNull)
+				.filter(name -> name.endsWith("berto"))
+				.findFirst()
+				.orElseThrow(() -> new ZeroBertoException("Não há nenhum Berto!"));
 
 	}
 }
