@@ -26,8 +26,8 @@ public class Exercicio5 {
 		System.out.println(new Exercicio5().buscaPrimeiroNomeTerminadoEmBerto(list));
 	}
 
-	public String buscaPrimeiroNomeTerminadoEmBerto(List<String> lista) {
-		return lista.stream().filter(Objects::nonNull).filter(name -> name.endsWith("berto")).findFirst().orElseThrow(() -> new ZeroBertoException("Não há nenhum Berto!"));
+	public String buscaPrimeiroNomeTerminadoEmBerto(List<String> list) {
+		return list.stream().filter(Objects::nonNull).filter(name -> name.endsWith("berto")).findFirst().orElseThrow(() -> new ZeroBertoException("Não há nenhum Berto!"));
 
 	}
 }

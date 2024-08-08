@@ -24,10 +24,11 @@ public class Desafio {
 	list.add(new Pessoa("Camile", "(48)91234-5678", LocalDate.of(1990, 06, 16)));
 	list.add(new Pessoa("Jonah", "(48)91234-5678", LocalDate.of(1989, 11, 13)));
 	
-	String resultado = list.stream().filter(r -> r.getDataNascimento().isLeapYear() || comecaVogal(r.getNome()))
+	System.out.println(new Desafio().resultado(list));
+	}
+	public String resultado(List<Pessoa> list) { 
+		return list.stream().filter(r -> r.getDataNascimento().isLeapYear() || comecaVogal(r.getNome()))
 			.sorted(Comparator.comparing(Pessoa::getNome).reversed()).map(Pessoa::getNome).collect(Collectors.joining("; "));
-	
-	System.out.println(resultado);
 	}
 	
 	public static boolean comecaVogal(String vogal) {
@@ -35,4 +36,7 @@ public class Desafio {
 		return Stream.of("a", "e", "i", "o", "u").anyMatch(vogal::startsWith);
 	}
 	
+	public String listaPessoas(List<Pessoa> list) {
+		return list.toString();
+	}
 }
