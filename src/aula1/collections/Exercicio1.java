@@ -26,7 +26,7 @@ public class Exercicio1 {
 		for (int i = 0; i < 50; i++) {
 			lista.add(generator.nextInt(100));
 		}
-		Collections.sort(lista);;
+		Collections.sort(lista);
 		System.out.println(lista);
 	}
 }
