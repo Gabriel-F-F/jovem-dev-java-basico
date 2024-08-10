@@ -4,8 +4,8 @@ import avaliacao.semana2.entidades.Personagem;
 
 public class PersonagemDerrotadoException extends Exception {
 
-	public PersonagemDerrotadoException(Personagem a, Personagem b) {
-		super(a + " foi derretado por " + b);
+	public PersonagemDerrotadoException(String nome1, String nome2) {
+		super(nome1 + " foi derretado por " + nome2);
 	}
 	
 	public PersonagemDerrotadoException(String mensagemException) {
